@@ -4,13 +4,13 @@ def cmd_help(args): #подсказка команд, которые актив�
 def cmd_add( args):
     if len(args) < 2:
         print("Использование: add <name> <qty>, у вас либо нету названия, либо количества")
-    return
+        return
     name = args[0]
     qty = int(args[1])
-    printf(f'добавлено {name} x{qty}')
+    print(f'добавлено {name} x{qty}')
 
     #обработка ошибок
-    try :
+    try:
         qty = int(args[1])
     except ValueError:
         print("qty должно быть целым числом, например: add milk 2")
@@ -18,8 +18,7 @@ def cmd_add( args):
 
 commands = {
     "help": cmd_help,
-    "add": cmd_add,
-}
+    "add": cmd_add}
 
 while True : #infinity consol
     line = input(">>> Write, pls").strip()
